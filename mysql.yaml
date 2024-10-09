@@ -2,15 +2,15 @@
   hosts: mysql
   become: yes
   vars:
-    mysql_root_password: expenseApp@1
+    mysql_root_password: ExpenseApp@1
     login_host: 172.31.26.107
   tasks:
-  - name: ansible to install pipe
+  - name: ansible to install pymsql
     ansible.builtin.pip:
       name:
       - boto3
       - botocore
-      executable: pipe3.9
+      executable: pip3.9
 
   - name: install mysql server
     ansible.builtin.package:
