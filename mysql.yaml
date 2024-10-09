@@ -7,7 +7,7 @@
       name: install mysql-server
       state: present
 
-  - name: run the mysql server
+  - name: start mysql server
     ansible.builtin.service:
        name: run mysqld
        state: started
