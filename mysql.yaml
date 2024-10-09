@@ -5,7 +5,7 @@
     mysql_root_password: expenseApp@1
     login_host: 172.31.26.107
   tasks:
-  - name: ansible to install pymysql
+  - name: ansible to install boto3 ans botocore
     ansible.builtin.pip:
       name:
       - boto3
@@ -26,3 +26,11 @@
       login_user: root
       login_password: "{{ mysql_root_password }}"
       login_host: "{{ login_host }}"
+    ignore_errors: true
+    register: mysql_info
+
+
+  - name: print mysql info
+    ansible.builtin.debug:
+      msg: "{{ mysql_info }}"
+  
