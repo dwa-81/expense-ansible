@@ -5,12 +5,13 @@
     mysql_root_password: expenseApp@1
     login_host: 172.31.26.107
   tasks:
-  - name: ansible to install pymsql
+  - name: ansible to install pipe
     ansible.builtin.pip:
       name:
       - boto3
       - botocore
       executable: pipe3.9
+
   - name: install mysql server
     ansible.builtin.package:
       name:  mysql-server
