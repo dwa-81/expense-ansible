@@ -16,8 +16,8 @@
 
   - name: install nodejs
     ansible.builtin.package: 
-       name: nodejs
-       state: present
+      name: "{{ item }}"
+      state: present
 
     loop:
     - nodejs
@@ -26,12 +26,12 @@
 
   - name: create expense user
     ansible.builtin.service: 
-    name: expense
+     name: expense
 
   - name: create app directory
     ansible.builtin.file:
-    path: /app
-    state: directory
+     path: /app
+     state: directory
 
   - name: download backend code
     ansible.builtin.get_url:
