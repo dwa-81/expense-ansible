@@ -1,4 +1,4 @@
-- name: backend configuration
+- name: configure backend server
   hosts: backend
   become: yes
   vars:
@@ -15,13 +15,13 @@
 
 
   - name: install nodejs
-    ansible.builtin.package: dnf install nodejs -y
-    name: nodejs
-    state: present
+    ansible.builtin.package: 
+       name: nodejs
+       state: present
 
-  loop:
-  - nodejs
-  - mysql
+    loop:
+    - nodejs
+    - mysql
 
 
   - name: create expense user
