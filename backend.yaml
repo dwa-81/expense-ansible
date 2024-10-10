@@ -59,6 +59,7 @@
     ansible.builtin.pip:
       name:
       - pymysql
+      - cryptography
       executable: pip3.9
 
   - name: import mysql data
@@ -76,5 +77,5 @@
        daemon_reload: true
        state: restarted
        name: backend
-       
+
       
